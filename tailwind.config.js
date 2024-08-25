@@ -1,5 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+const colors = {
+  primary: "#3498db",
+  secondary: "#66d9ef",
+  background: "#f7f7f7",
+  text: "#333333"
+};
+
 module.exports = {
+  mode: "jit",
+  purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   content: [
     './src/**/*.{js,jsx,ts,tsx}',
     './public/index.html',
@@ -7,11 +16,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        ...colors,
         'custom-blue': '#1fb6ff',
         'custom-purple': '#7e5bef',
       },
       fontFamily: {
-        'sans': ['Roboto', 'Arial', 'sans-serif'],
+        sans: ["-apple-system", "BlinkMacSystemFont", '"Segoe UI"', "Helvetica Neue", 'Arial', "sans-serif"],
         'serif': ['Merriweather', 'Georgia', 'serif'],
       },
       spacing: {
@@ -20,5 +30,6 @@ module.exports = {
       },
     },
   },
+  variants: {},
   plugins: [],
 }
