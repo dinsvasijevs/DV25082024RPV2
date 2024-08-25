@@ -1,7 +1,14 @@
-// src/types/index.ts
-export * from './interfaces';
-// src/types/index.ts
-import { TodoItem, TodoSummary } from '../types';
+export interface Todo {
+    id: number;
+    title: string;
+    content: string;
+    completed: boolean;
+}
 
+export interface Comment {
+    id: number;
+    todoId: number;
+    text: string;
+}
 export * from './interfaces';
 export * from './utils';

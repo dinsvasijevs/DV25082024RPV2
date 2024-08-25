@@ -1,14 +1,19 @@
-import * as React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { TodoProvider } from './contexts/TodoContext';
+import HomePage from './pages/HomePage';
+import TaskDetailPage from './pages/TaskDetailPage';
 
-const App = () => {
+const App: React.FC = () => {
     return (
-        <BrowserRouter>
-            <Routes>
-                {/* Add routes here */}
-            </Routes>
-        </BrowserRouter>
+        <TodoProvider>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/task/:id" element={<TaskDetailPage />} />
+                </Routes>
+            </Router>
+        </TodoProvider>
     );
 };
 
